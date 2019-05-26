@@ -1,0 +1,20 @@
+{
+  "name": "tank-utils",
+  "version": "1.2.1",
+  "description": "tank-utils",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anthhub/tank-utils"
+  },
+  "scripts": {
+    "build": "npx tsc -p .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^3.4.5"
+  }
+}
