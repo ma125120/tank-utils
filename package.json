@@ -1,6 +1,6 @@
 {
   "name": "tank-utils",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "tank-utils",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
