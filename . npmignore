@@ -35,6 +35,7 @@ bower_components
 # Dependency directories
 node_modules/
 src/
+/src
 jspm_packages/
 
 
