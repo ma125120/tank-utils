@@ -12,12 +12,12 @@
 export function get<T>(target: T, fn: (target: T) => any, defaultValue: any = null): any {
   const caller = target
   if (typeof fn !== 'function') {
-    throw TypeError('The first property must be a function！')
+    throw TypeError('The second property must be a function！')
   }
   try {
     return fn(caller)
   } catch (error) {
-    console.warn('====================================')
+    console.warn('=============tank-utils=============')
     console.warn(`In the function from properties :`, fn.toString())
     console.warn(error.message)
     console.warn('====================================')
