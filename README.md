@@ -13,28 +13,73 @@
 
 ``` javascript
 /**
- * @description 链式调用,出错保护
+ * @description 链式调用,出错保护,支持lodash字符串模式和回调函数,推荐函数式
  * @author anthhub
- * @date 2019-05-25
+ * @date 2019-06-01
  * @export
  * @template T
  * @param {T} target
- * @param {(target: T) => any} fn
+ * @param {(string | { (target: T): any })} fn
  * @param {*} [defaultValue=null]
  * @returns {*}
  */
-function _get<T>(target: T, fn: (target: T) => any, defaultValue?: any): any;
+function get(target, fn, defaultValue) 
+
+/**
+ * @description 延时函数, 返回一个promise, 配合async/await使用更佳
+ * @author anthhub
+ * @date 2019-06-01
+ * @export
+ * @param {number} [time=0]
+ * @returns
+ */
+function wait(time)
+
+/**
+ * @description 函数节流
+ * @author anthhub
+ * @date 2019-06-01
+ * @export
+ * @template T
+ * @param {T} fn
+ * @param {number} [delay=0]
+ * @returns {T}
+ */
+
+/**
+ * @description 函数防抖
+ * @author anthhub
+ * @date 2019-06-01
+ * @export
+ * @template T
+ * @param {T} fn
+ * @param {number} [delay=0]
+ * @returns {T}
+ */
+function debounce(fn, delay) 
+
+/**
+ * @description 毫秒数转字符串
+ * @author anthhub
+ * @date 2019-05-26
+ * @export
+ * @param {number} inputTime
+ * @returns {string}
+ */
+function timeToLocalStr(time) 
 ```
 
 
-使用方式:
+使用实例:
 
 ``` javascript
-import {_get} from "../dist/index";
+import {tank} from "tank-utils";
 
 const obj = { a: { b: "1111" } };
 
-_get(obj, obj => obj.a.b.c.d, null);
+
+tank.get(obj, 'a.b.c.d', null);
+tank.get(obj, obj => obj.a.b.c.d, null);  //推荐函数式方式
 ```
 
 
