@@ -10,7 +10,6 @@
  * @returns {*}
  */
 export function get<T extends { [propName: string]: any }>(target: T, fn: string | { (target: T): any }, defaultValue: any = null): any {
-  const caller = target
 
   try {
     if (typeof fn === 'string') {
