@@ -80,6 +80,12 @@ const obj = { a: { b: "1111" } };
 
 tank.get(obj, 'a.b.c.d', null);
 tank.get(obj, obj => obj.a.b.c.d, null);  //推荐函数式方式
+
+
+//常用方法可以应用到全局, 以browser为例, 在入口文件index里面
+import tank from "tank-utils";
+window.get = tank.get  //这样全局都可以访问了
+
 ```
 
 
