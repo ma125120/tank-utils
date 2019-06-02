@@ -1,9 +1,10 @@
+
 /**
  * @description 毫秒数转字符串
  * @author anthhub
- * @date 2019-05-26
+ * @date 2019-06-02
  * @export
- * @param {number} inputTime
+ * @param {number} time
  * @returns {string}
  */
 export function timeToLocalStr(time: number): string {
