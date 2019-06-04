@@ -10,7 +10,6 @@
  * @returns {*}
  */
 export function get<T extends { [propName: string]: any }>(target: T, fn: string | { (target: T): any }, defaultValue: any = null): any {
-
   try {
     if (typeof fn === 'string') {
       return target[fn]
@@ -20,10 +19,7 @@ export function get<T extends { [propName: string]: any }>(target: T, fn: string
     }
     throw TypeError('The second property must be a function or string！')
   } catch (error) {
-    console.warn('=============tank-utils=============')
-    console.warn(`In the function from properties :`, fn.toString())
     console.warn(error.message)
-    console.warn('====================================')
     return defaultValue
   }
 }
