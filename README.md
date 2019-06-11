@@ -23,7 +23,7 @@
  * @param {*} [defaultValue=null]
  * @returns {*}
  */
-function get(target, fn, defaultValue) 
+function pick(target, fn, defaultValue) 
 
 /**
  * @description 延时函数, 返回一个promise, 配合async/await使用更佳
@@ -73,18 +73,18 @@ function timeToLocalStr(time)
 使用实例:
 
 ``` javascript
-import tank from "tank-utils";
+import { pick } from "tank-utils";
 
 const obj = { a: { b: "1111" } };
 
 
-tank.get(obj, 'a.b.c.d', null);
-tank.get(obj, obj => obj.a.b.c.d, null);  //推荐函数式方式
+pick(obj, 'a.b.c.d', null);
+pick(obj, obj => obj.a.b.c.d, null);  //推荐函数式方式
 
 
 //常用方法可以应用到全局, 以browser为例, 在入口文件index里面
-import tank from "tank-utils";
-window.get = tank.get  //这样全局都可以访问了
+import { pick } from "tank-utils";
+window.pick = pick  //这样全局都可以访问了
 
 ```
 
