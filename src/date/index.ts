@@ -1,11 +1,12 @@
 
 /**
- * @description 毫秒数转字符串
- * @author anthhub
- * @date 2019-06-02
- * @export
- * @param {number} time
- * @returns {string}
+ * 
+ *
+ * **示例代码：**
+ *
+ *     timeToLocalStr(1560480964000)
+ *
+ * @see https://www.npmjs.com/package/tank-utils
  */
 export function timeToLocalStr(time: number): string {
   if (typeof time !== 'number') {

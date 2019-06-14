@@ -11,7 +11,39 @@
 
 函数签名:
 
+
+
+
+
+
 ``` javascript
+
+
+
+/**
+ * 空函数
+ *
+ * **示例代码：**
+ *
+ *     non.call()
+ *
+ * @see https://www.npmjs.com/package/tank-utils
+ */
+ function non(...args: any[]) {
+
+
+/**
+ * 函数组合
+ *
+ * **示例代码：**
+ *
+ *     compose(fn1, fn2, fn3, fn4) // 从右向左
+ *
+ * @see https://www.npmjs.com/package/tank-utils
+ */
+ function compose<T extends Array<(args: any) => any>>(...funcs: T): (args: any) => any {
+
+
 /**
  * @description 链式调用,出错保护,支持lodash字符串模式和回调函数,推荐函数式
  * @author anthhub
@@ -45,6 +77,7 @@ function wait(time)
  * @param {number} [delay=0]
  * @returns {T}
  */
+function throttle(fn, delay) 
 
 /**
  * @description 函数防抖
