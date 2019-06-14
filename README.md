@@ -29,7 +29,7 @@
  *
  * @see https://www.npmjs.com/package/tank-utils
  */
- function non(...args: any[]) {
+ function non(...args: any[]) 
 
 
 /**
@@ -41,7 +41,7 @@
  *
  * @see https://www.npmjs.com/package/tank-utils
  */
- function compose<T extends Array<(args: any) => any>>(...funcs: T): (args: any) => any {
+ function compose<T extends Array<(args: any) => any>>(...funcs: T): (args: any) => any 
 
 
 /**
