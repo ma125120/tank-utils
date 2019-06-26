@@ -86,7 +86,7 @@ export function wait(time: number = 0) {
  *
  * @see https://www.npmjs.com/package/tank-utils
  */
-export function throttle<T extends () => any>(fn: T, delay: number = 0): T {
+export function throttle<T extends (...args: any[]) => any>(fn: T, delay: number = 0): T {
   if (typeof fn !== 'function') {
     throw TypeError('The first property must be a function！')
   }
@@ -96,10 +96,10 @@ export function throttle<T extends () => any>(fn: T, delay: number = 0): T {
   }
 
   let lastTime = 0
-  const newFn = () => {
+  const newFn = (...args: any[]) => {
     const nowTime = Date.now()
     if (nowTime - lastTime > delay) {
-      fn.call(this)
+      fn.apply(this, args)
       lastTime = nowTime
     }
   }
@@ -115,7 +115,7 @@ export function throttle<T extends () => any>(fn: T, delay: number = 0): T {
  *
  * @see https://www.npmjs.com/package/tank-utils
  */
-export function debounce<T extends () => any>(fn: T, delay: number = 0): T {
+export function debounce<T extends (...args: any[]) => any>(fn: T, delay: number = 0): T {
   if (typeof fn !== 'function') {
     throw TypeError('The first property must be a function！')
   }
@@ -125,10 +125,10 @@ export function debounce<T extends () => any>(fn: T, delay: number = 0): T {
   }
 
   let timer: any = null
-  const newFn = () => {
+  const newFn = (...args: any[]) => {
     clearTimeout(timer)
     timer = setTimeout(() => {
-      fn.call(this)
+      fn.apply(this, args)
     }, delay)
   }
 
